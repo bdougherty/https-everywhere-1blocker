@@ -1,0 +1,31 @@
+{
+  "name": "https-everywhere-1blocker",
+  "version": "1.0.0",
+  "description": "Utility for converting HTTPS Everywhere rules to a 1Blocker package.",
+  "main": "index.js",
+  "author": "Brad Dougherty <me@brad.is>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdougherty/https-everywhere-1blocker.git"
+  },
+  "scripts": {
+    "postinstall": "git submodule update --init",
+    "test": "xo",
+    "prebuild": "git submodule update --init",
+    "build": "node index.js"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "eslint-config-bdougherty": "^4.1.1",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": "bdougherty",
+    "ignores": [
+      "https-everywhere/**"
+    ]
+  }
+}
