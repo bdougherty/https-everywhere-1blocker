@@ -8,7 +8,7 @@ const readFileAsync = promisify(readFile);
 const writeFileAsync = promisify(writeFile);
 const parseXml = promisify(xml2js.parseString);
 
-const verbose = false;
+const verbose = process.env.npm_config_loglevel === 'verbose';
 
 async function getRuleFiles() {
 	const rulesDir = join(__dirname, 'https-everywhere', 'rules');
